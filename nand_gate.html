@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OR_gate</title>
+    <title>NAND_gate</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
@@ -13,8 +13,7 @@
     <div class="container">
         <div class="inner-container">
             <img id="img_or"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACeCAMAAACcjZZYAAAAgVBMVEX///9FRUVCQkI/Pz9WVlbb29usrKzx8fFGRkZJSUn4+Pj7+/tPT09MTEw9PT26urrs7Ow2Njbl5eXS0tJ6enq2trZlZWXMzMxra2vFxcXf399bW1tgYGDY2NhwcHCysrKampqCgoKioqKnp6eAgICNjY2UlJQtLS0xMTElJSUaGhodMaDNAAALzUlEQVR4nO2daXubvBKGjcDsO5h9X5z0/P8feJCEbdykTQKjRG/h/tLUV4rhqWY00gyj0+ng4ODg4ODg4ODg4OA/h5/W9cVJ07g8Z77vKrrx03f0X8JvNYRUVbNMScqLqArba9df0viMlfzpm+MfR0MCBVFEUUSCZkpFEo6N7MTZIeNfcFThPWYlkWBJUTh2dVr6ymHVb/ETEculaiq687uQk4yqWYSjnJbuMRKfCSoilzTKfTO2YRXlkqUSE34WEssoTCJe69g/NHzgj8T95Y5+MnRdUdwsSJ26uw5VJFkCIjouRBSRllfXS3CMwxmlMyd9kCk/CTIpOQnpyE07yag9qzj9ZBZDl2bKT90zTyi1hPWzuvfUMHTFL9NL11a5KWARH8Zs5WHjnA8Jdaf4s34UQ3ezeBIxmUbifRxOP2hYwmznhmykCVZEaz4YSobilmk/Ug0fo7Bo5cDdc1xjxFg/pDXuJ355smanGSJTuGk4rVukqkl3PCMbJIBBWvcZ/fDvKxkZhup9FApmct2xGZfhR/7vDbofy2OCR+E8CK1odPY6Bql+pvy1qXSSsB8KbaHgNfV36QdLYr/S5cvDRykvZBDOCppVF+wxnCnJ/JE7KwaP7qdNdVdQkFpnh0MwiLB+UbzqHy8VnALCpC935wVjEj9X5cp/brjpNZn9IEL5mO7Nhh2yfhv81RcwfGfM5yEoWoPzyUDoH0Gv8f6BcN0ybPRMrqx5CKrhZVcCKp2Gw2d5m99S0jGfBRSSek8Culf80FK68TL6uU+EPQrok/A5OW+9juFfQm024WpHPpCGLyPArOmmg0UFtIZ0L2GM4eDpQ6sh4l4lbU0qoHQ9cx9I+3EAcI9Kh583Xxv9PePOAiIhknm34OrlFeKhqftrgYJe1wmJCSMtjLm2YFdDdgdxoTgHM1+MXycqETDv1gfk7HG86Q4hLqT3Kl78bp59bxhZkyMaRnM8AEPRRCLIM7vEfDctPp7R45ZacN7z6gFd0+skrwe5VjwtfrcHz0vcOqIecCz5nIJTD/mtDWK9J70heweQI8UoRzoAEz5jwNBOJvcnZiAXy/BYsS6gA0W5FEQ/iUcDnmy3Obk2kPWeajx7VLAzpREMGsnoXfmbgVPPm4K+Csh66eyhysB+yu0ksgoZwGZ1KAZbmmbK3rOB/mdTE374TU41pTNIEgBfeCOKZY/TH/6LVy8/NjJHXkcf4cKN+g9ftx6SERVQATmtbyf2PHxDRiFKy4/LShXXgXDhLgrhvZR/VUlKNOUpgBltgUS5jf26mNeMXtLeLV/+BCrWz3Lgb9WlJYXSmpQoIwxNDHF1qD7NIJfFx7W0KFv+GioWHmznYMlcUohLWjkhtgXNtCZMQUwWn/tNJK0krwo8Rlj4eJ2m9HJu7Le1kUexhdflgFH880oyF+8cCB2LR9SdnKbkOdFPFYsL5WovrXcT52mVAB+7EObxx0n8Enj3nT79VQyBrqqP0yOabCIMg+oXwqwxN3K1X+/3UYkelEt2rMl6GzYGNqfkRx7WvyKS7g9Zex5UtIE3DhhZL96UxTsw2lcqMhlRevb1/hcf2HqldSVXH6M0Kh/h3/Xl1+IZ1dcXMOudYj8VaA/nLX5Llr8wOb0NxOkygipTsNIwMve2zKJbWpHZ8uD+mKAMk3wFu925FE+/GvS2GDcYHQ5dWDk/PH3giq6Cj+iPAdj5CTK767stZEqeO8ppcYVGhsYVkJQ8g30dLnCrSb6Q4eCgKfkEyL36F+cB1Np1A3rLdu64VdT0MAPc+eU9+B/IJTdh4ISvydS1k6RKAbP2TW1tZrroC8glt4ETlhrTvIQywg0/Q5851fZiIfZzpHjXgK0XIRUhEezWi24hm4e97ACbFrNlG0G/Anq/mc7z4JOEKyjx0GjYfkeAvwNq8iX4NpI+/q1vICsYB34n7P3EycFCeojB9tgtlb6CHzHdNKBgBwu59Ig9sD27jfjJJN/AWD4lRJA5PT0SRU6KkIh8IetJrMb79k15LgkBJX6Q3lmuKi4X5/zenV08LoIWzPfIdzanb9HmBLO5xJrRlqgUQbWqd2otFUu0eNmD+BbjPWX05Y93erj9Hc18J9UEmKrdzLdMHSfnS6It5JPeypeJYsT4dj/PdwQuJx1HLuhPpV5vuRcxme+86VCJNh9BC4Zs+DWMvyTDX5J3c2VhvWSunXCeuE8k8duWE6lnt4xv9wuQFQHbRdvpJONVG8gLUSddEgVOghbMN2wZkD1ZASjs6z0P5v8BBvYbVjShArTocFVR4iVoOdHtUjY1fg/cAS7d0doeT0XTuEyD7Wb9vOKtQHLlpY2KczbDQWtLkiqqmN4HfYMExr12tqDeAyAOdvzOJFHJNGp24Abfqfn1+uAXw/z0J8F5HIFp3JLhaVcFSvS62ZKfN94ev5zA0hnrHc7zhv9mlRBJ8+YsX0DDVQaIUQHwj0M2DFgWGdAaF4iuMTxCXB+j4maMLpMKqx8vkGSD0TF6L+tGgF+Q1mBzlPyAQzKo+on38Afwd/55IpAElnulOqkN56A4Uvn1QvAi0EJXbLug+ddnSLcsi4PSXMUWyDtttugJcKZAbZeZXyeOD/HwXowyLZXx1mwn2aIFdtUU57+YFc6S5QaqeOhqoNhzWt1IRLAdG/3Kct71W/pOKqPLf4m7fHirvwG6KHklK2E07yqky6dZ81BFtpAvg3slq8ZV9Q2b51PwUldQPzoi5JtgIR+ZOBi90Kb0OIXCx+uUp6V8jgfVR4jsw7F5YUqRSTOIgYuXeU8L+ZRC9GCeGFc9MZo4ZvVWd3cHZ5IvwUVJdWFDbVGTDASDNi539Th5ER9zC5s99Nu+7epOEEEI2oBzwdzGJeJHPSwfAdnPq4T1fUioeTEYfG6jbTjXgg2T8Vb+xFkWl75Pl9d3wcGtRhkMPn8kzZ24Uu85bB7vH+vd+h5MgiCCFrtT5gZgFUeWe1rKdzLR6+PzYGUHMOIIEHie9NZ+LuRmzqUs5AvFRQ+wlf3n+lBgkf5SetqCveUl3ruxkK9dyrcSXNQH3/8mGwVOW28u5CvQy1aHT9NfgG2bMTo9CRNJXzwK7jt4yOe/bn4dyagZpL/mrqV8th2e5BvID36EvK2lHSXx76B76HockpaRwgBxpgM4io3McCJRRbvYeC2XvF8LOm/4Pe1ZbzbcuT2C4ok2yXV43taaAKPGi13IjSolpcfuoMThz+0RlGFoJ4a22+yxSAJH7cA8lFFeqdezeO1WDwnNXMPttPh9JNBOw3s4MEtp8KybQ5mu68x2a44BhzMuNMaFZq5hHlWZj8rCR41x6vVgIYd8AqUg7sdkCXmT/fte7wSauSZHZFG7bTk+YQcStxVgMteGPx+Phc/H2ofd3pphbs9c4wMq1dv5irs5ItWQ8SS5OXOtxMvjUflcZTDAcCzSSm/TAxv4cF5xdyPvNPfB3DRt4KOhpdvZ2la4o2NRb+eSr88eGn56jZYHk+9JvFOQbDnCQPeda3I7URtpSVfuI1S5UVb0AJI1T62U9RjN2k3iSa3z9g35fxuq3oqQRcnSLsy1u3Zm1Qc7CfMeBFg9QftaEsLA0g2FJdxsFplJk7o7G3inu3pf6L2v+MGlCQtTuA87waya1N+XxyMYMbFc63PqGZNyTtcmknZvp4KQKoXdLrWb9CD5Q2R9uNjQ3SxI5WsYEeXu0glmNNbBDm2WoDsk3jP/OPYMxfWz2JGbtiokS1gqh6VruzTb5bAjKDLJQ0j9Qj1D1yfJ/KwM0kvfjEMV5aYmLJsf4R81KWn7lIMXtn8QWmsnWEONu+HVstz3XXMd27BKilzCotEWUo+qK6KcGQ3NJdins1tg9CSLI2iWNiuDnppuLavV6Ml3Vp60WDllp77uCVL9/XduQlpSFI7dJT67ex9zD5T297Z56KYXGYfTaJOKJGwb2cG6HSPuN+J5V1hQBVXVNMsyTSkvoqQK27HpaycNzq6iH7r9AcOPSTfVuRleHATl2XddZZLs0Ozg4ODg4ODg4ODg4ODg4ODg4O/8HxxQyFquaK9BAAAAAElFTkSuQmCC"
-                alt="or gate">
+                src="https://www.computerscience.gcse.guru/wp-content/uploads/2016/11/NAND.png"alt="or gate">
             <label id="for-in-1" for="in-1">A</label>
             <input id="in-1" type="text">
             <label id="for-in-2" for="in-2">B</label>
@@ -34,7 +33,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">OR_Gate Truth Table</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">NAND_Gate Truth Table</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -79,7 +78,7 @@
             var a = document.getElementById('in-1').value;
             var b = document.getElementById('in-2').value;
             var c = document.getElementById('out-main').value;
-            if (a == 0 && b == 0) {
+            if (a == 1 && b == 1) {
                 x = 0;
             }
             else {
@@ -92,7 +91,7 @@
                 addHtmlTableRow();
             }
             else {
-                alert('INCORRECT');
+                alert('INVALID');
             }
 
         }

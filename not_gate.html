@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOT_gate</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <img id="img_or"
+                src="data:image/png;base64,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"
+                alt="or gate">
+            <label id="for-in-1" for="in-1">A</label>
+            <input id="in-1" type="text">
+            <label id="for-in-2" for="out-main">Z</label>
+            <input id="in-2" type="text">
+            <button class="btn btn-info" onclick="orGate()">CHECK</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Get table
+            </button>
+
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">NOT_Gate Truth Table</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-auto">
+                        <div class="table-cont">
+                            <table class="p-2" style="width:30vmin;" id="table" border=1px;>
+                                <tr style="border:1px solid;">
+                                    <th>A</th>
+                                    <th>Z</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary" id="pdf-btn" onclick="save()"> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+
+
+        function orGate() {
+            var a = document.getElementById('in-1').value;
+            var c = document.getElementById('in-2').value;
+            if (a == 0) {
+                x = 1;
+            }
+            else if (a == 1) {
+                x = 0;
+            }
+
+            checker(x, c);
+        }
+        function checker(y, z) {
+            if (y == z) {
+                addHtmlTableRow();
+            }
+            else {
+                alert('INCORRECT');
+            }
+
+        }
+        function addHtmlTableRow() {
+            var table = document.getElementById('table'),
+                newRow = table.insertRow(table.length),
+                cell1 = newRow.insertCell(0),
+                cell2 = newRow.insertCell(1),
+
+                a_name = document.getElementById('in-1').value;
+
+            out_name = document.getElementById('in-2').value;
+            cell1.innerHTML = a_name;
+            cell2.innerHTML = out_name;
+
+
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        $(document).on('click', '#pdf-btn', function () {
+
+            let pdf = new jsPDF();
+            let section = $('body');
+            let page = function () {
+                pdf.save('pagename.pdf');
+
+            };
+            pdf.addHTML(section, page);
+
+        })
+    </script>
+</body>
+<style>
+    .container {
+        height: 100vh;
+        background-color: lightblue;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .inner-container {
+
+        position: relative;
+        width: 80vmin;
+        height: 70vmin;
+        background-color: aqua;
+        overflow: hidden;
+    }
+
+    #img_or {
+        width: 45vmin;
+        height: 20vmin;
+        top: 25vmin;
+        position: absolute;
+        left: 17vmin;
+        border: 1px solid black;
+    }
+
+    #in-1 {
+        position: absolute;
+        width: 5vmin;
+        top: 33vmin;
+        left: 10vmin;
+    }
+
+    #for-in-1 {
+        position: absolute;
+        width: 5vmin;
+        top: 29vmin;
+        left: 7vmin;
+        font-weight: 700;
+    }
+
+
+
+    #in-2 {
+        position: absolute;
+        right: 11vmin;
+        width: 5vmin;
+        top: 33vmin;
+    }
+
+    #for-in-2 {
+        position: absolute;
+        font-weight: 700;
+        right: 8.5vmin;
+        top: 33.5vmin;
+    }
+</style>
+
+</html>
