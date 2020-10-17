@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOR_gate</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <img id="img_or"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhmBKmesyMBwLIYNQGAh4Jc4Ioi_ajDhNsTg&usqp=CAU" alt="or gate">
+            <label id="for-in-1" for="in-1">A</label>
+            <input id="in-1" type="text">
+            <label id="for-in-2" for="in-2">B</label>
+            <input id="in-2" type="text">
+            <label id="for-out-main" for="out-main">Z</label>
+            <input id="out-main" type="text">
+            <button class="btn btn-info" onclick="orGate()">CHECK</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Get table
+            </button>
+
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">XOR_Gate Truth Table</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-auto">
+                        <div class="table-cont">
+                            <table class="p-2" style="width:30vmin;" id="table" border=1px;>
+                                <tr style="border:1px solid;">
+                                    <th>A</th>
+                                    <th>B</th>
+                                    <th>Z</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary" id="pdf-btn" onclick="save()"> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+
+
+        function orGate() {
+            var a = document.getElementById('in-1').value;
+            var b = document.getElementById('in-2').value;
+            var c = document.getElementById('out-main').value;
+            if (a == 0 && b == 1) {
+                x = 1;
+            }
+            else if(a == 1 && b == 0){
+                x = 1;
+            }
+            else {
+                x = 0;
+            }
+            checker(x, c);
+        }
+        function checker(y, z) {
+            if (y == z) {
+                addHtmlTableRow();
+            }
+            else {
+                alert('INCORRECT');
+            }
+
+        }
+        function addHtmlTableRow() {
+            var table = document.getElementById('table'),
+                newRow = table.insertRow(table.length),
+                cell1 = newRow.insertCell(0),
+                cell2 = newRow.insertCell(1),
+                cell3 = newRow.insertCell(2);
+            a_name = document.getElementById('in-1').value;
+            b_name = document.getElementById('in-2').value;
+            out_name = document.getElementById('out-main').value;
+            cell1.innerHTML = a_name;
+            cell2.innerHTML = b_name;
+            cell3.innerHTML = out_name;
+
+
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript"></script>
+    <script>
+      $("body").on("click", "#pdf-btn", function () {
+            html2canvas($('#table')[0], {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 125
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("Table.pdf");
+                }
+            });
+        });
+    </script>
+</body>
+<style>
+    .container {
+        height: 100vh;
+        background-color: lightblue;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .inner-container {
+
+        position: relative;
+        width: 80vmin;
+        height: 70vmin;
+        background-color: aqua;
+        overflow: hidden;
+    }
+
+    #img_or {
+        width: 45vmin;
+        height: 20vmin;
+        top: 25vmin;
+        position: absolute;
+        left: 17vmin;
+        border: 1px solid black;
+    }
+
+    #in-1 {
+        position: absolute;
+        width: 5vmin;
+        top: 29vmin;
+        left: 10vmin;
+    }
+
+    #for-in-1 {
+        position: absolute;
+        width: 5vmin;
+        top: 29vmin;
+        left: 7vmin;
+        font-weight: 700;
+    }
+
+    #in-2 {
+        position: absolute;
+        width: 5vmin;
+        top: 37vmin;
+        left: 10vmin;
+    }
+
+    #for-in-2 {
+        position: absolute;
+        width: 5vmin;
+        top: 37vmin;
+        left: 7vmin;
+        font-weight: 700;
+    }
+
+    #out-main {
+        position: absolute;
+        right: 11vmin;
+        width: 5vmin;
+        top: 33vmin;
+    }
+
+    #for-out-main {
+        position: absolute;
+        font-weight: 700;
+        right: 8.5vmin;
+        top: 33.5vmin;
+    }
+</style>
+
+</html>

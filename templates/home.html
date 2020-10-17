@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<main>
+<div class="container p-5">    
+<div class="card-columns">
+    <div class="card">
+      <img src="/static/D.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Basic Gates</h5>
+        <p class="card-text">Experiment with basic gates like AND OR XOR XNOR</p>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <a href="/andgate"><button type="button" class="btn btn-primary" style="margin: 5px;">AND</button></a>
+              <a href="/orgate"><button type="button" class="btn btn-primary" style="margin: 5px;" >OR</button></a>
+              <a href="/xorgate"><button type="button" class="btn btn-primary" style="margin: 5px;" >XOR</button></a>
+              <a href="/xnorgate"><button type="button" class="btn btn-primary" style="margin: 5px;" >XNOR</button></a>
+            </div> 
+        </div>
+      </div>
+    </div>
+    <div class="card p-3">
+      <blockquote class="blockquote mb-0 card-body">
+        <p>"If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success."</p>
+        <footer class="blockquote-footer">
+          <small class="text-muted">
+            James Cameron <cite title="Source Title">https://blog.hubspot.com/sales/famous-quotes</cite>
+          </small>
+        </footer>
+      </blockquote>
+    </div>
+    <div class="card bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <p style="font-family: 'Dancing Script', cursive; font-size: xx-large;">Welcome back, <div class="display-4">{{ username }}</div></p>
+      </div>
+    <div class="card">
+      <img src="/static/D.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Universal Gates</h5>
+        <p class="card-text">Experiment with Universal gates like NAND & NOR </p>
+        <p class="card-text"><small class="text-muted">Yes, you can make make any elctronic gate with these 2 gates :)</small></p>
+      </div>
+    </div>
+    
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Combination Logic Circuits</h5>
+        <p class="card-text">Experiment With Combination of logic gates , like Adder Circuit, Half Adder Circuit etc.. </p>
+        <p class="card-text"><small class="text-muted">Yes, computers have millions of them to do calculations</small></p>
+      </div>
+    </div>
+    <div class="card">
+        <img src="/static/D.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Simulations</h5>
+          <p class="card-text">Take it EC elctronic simulation center</p>
+        </div>
+      </div>
+
+</div>  
+</main>
+
+
+
+
+
+{% endblock %}
