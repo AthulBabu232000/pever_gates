@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gate_pever</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+  
+            <button onclick="org()" class=" ml-5 btn btn-primary p-1 "><p>OR</p></button>
+            <button onclick="andg()" class="btn btn-primary p-0  "><p>AND</p></button>
+            <button onclick="norg()" class="btn btn-primary p-0  "><p>NOR</p></button>
+            <button onclick="nandg()" class="btn btn-primary p-0 "><p>NAND</p></button>
+            <button onclick="xorg()" class="btn btn-primary p-0  "><p>XOR</p></button>
+            <button onclick="xnorg()" class="btn btn-primary p-0 "><p>XNOR</p></button>
+            <button onclick="notg()" class="btn btn-primary p-0 "><p>NOT</p></button>
+           
+           <br>
+            <button onclick="halfAdd()" id = "halfa"class="btn btn-warning   p-0"><p>HALF ADDER</p></p></button>
+            <button onclick="fullAdd()" id = "fulla"class="btn btn-warning   p-0"><p>FULL ADDER</p></button>
+            <img src="pever.png" alt="">
+            <h5> pever<h5 style = "color:yellow;">py py</h5> </h5>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        function org() {
+            window.open('or_gate.html');
+        }
+        function andg() {
+            window.open('and_gate.html');
+        }
+        function norg() {
+            window.open('nor_gate.html');
+        }
+        function nandg() {
+            window.open('nand_gate.html');
+        }
+        function xorg() {
+            window.open('xor_gate.html');
+        }
+        function xnorg() {
+            window.open('xnor_gate.html');
+        }
+        function notg() {
+            window.open('not_gate.html');
+        }
+        function halfAdd() {
+            window.open('half_adder.html');
+        }
+        function fullAdd() {
+            window.open('full_adder.html');
+        }
+    </script>
+</body>
+<style>
+    h4{
+        color:white;
+        font-weight:600;
+        left:2vmin;
+        top:2vmin;
+        display:inline-block;
+        margin-left:5vmin;
+        margin-top:5vmin;
+        
+    }
+    .btn p{
+        transform:rotate(270deg);
+        
+    }
+    #fulla, #halfa{
+        color:white;
+        font-weight:600;
+        
+        
+    }
+   
+   
+    img {
+        width: 20vmin;
+        height: 20vmin;
+        border-radius: 50%;
+        position: absolute;
+        border: 3px solid white;
+        display:inline-block;
+        bottom:3vmin;
+        margin:2vmin;
+
+    }
+
+    h5 {
+        font-family: cursive;
+        font-weight: 700;
+        position: absolute;
+        bottom: 24vmin;
+        display:inline-block;
+        color:white;
+
+
+    }
+
+    .container {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 100vh;
+    }
+
+    .inner-container {
+        position: relative;
+        width: 120vmin;
+        height: 90vmin;
+        background-color:#000;
+        overflow:scroll;
+        justify-content:center;
+        display:flex;
+        
+        
+    }
+</style>
+
+</html>
