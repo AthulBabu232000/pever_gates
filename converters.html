@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>converters</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-10 text-center shadow p-2 mt-2 mb-1 bg-white rounded mx-auto">
+                <h5><= Decimal =></h5>
+
+            </div>
+        </div>
+        <!-- binary to decimal and decimal to binary -->
+        <div class="row">
+            <div class="col-10 text-center shadow p-3 mt-2 mb-1 bg-white rounded mx-auto">
+
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Decimal</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="decimal-in">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Binary</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="binary-in">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-10 text-center shadow p-3  mb-2 bg-white rounded mx-auto">
+                <div class="row">
+                    <div class="col-5 ">
+
+                        <button onclick="dToBinary()" class="btn btn-primary">D to B</button>
+                    </div>
+                    <div class="col-2 ">
+
+                        <button onclick="reset()" style="border-radius:50%;" class="btn btn-warning">R</button>
+                    </div>
+
+                    <div class="col-5">
+
+                        <button onclick="bToDecimal()" class="btn btn-danger">B to D</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- decimal to octal and octal to decimal -->
+        <div class="row">
+            <div class="col-10 text-center shadow p-3 mt-2 mb-1 bg-white rounded mx-auto">
+
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Decimal</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="decimal-in-2">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Octal</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="octal-in">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-10 text-center shadow p-3  mb-2 bg-white rounded mx-auto">
+                <div class="row">
+                    <div class="col-5 ">
+
+                        <button onclick="dToOctal()" class="btn btn-primary">D to O</button>
+                    </div>
+                    <div class="col-2 ">
+
+                        <button onclick="reset2()" style="border-radius:50%;" class="btn btn-warning">R</button>
+                    </div>
+
+                    <div class="col-5">
+
+                        <button onclick="oToDecimal()" class="btn btn-danger">O to D</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- decimal to hexa and hexa to decimal -->
+        <div class="row">
+            <div class="col-10 text-center shadow p-3 mt-2 mb-1 bg-white rounded mx-auto">
+
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Decimal</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="decimal-in-3">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Hexa</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="hexa-in">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-10 text-center shadow p-3  mb-2 bg-white rounded mx-auto">
+                <div class="row">
+                    <div class="col-5 ">
+
+                        <button onclick="dToHexa()" class="btn btn-primary">D to H</button>
+                    </div>
+                    <div class="col-2 ">
+
+                        <button onclick="reset3()" style="border-radius:50%;" class="btn btn-warning">R</button>
+                    </div>
+
+                    <div class="col-5">
+
+                        <button onclick="hToDecimal()" class="btn btn-danger">H to D</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- custom decimal conversions -->
+        <div class="row">
+            <div class="col-10 text-center shadow p-2 mt-2 mb-1 bg-white rounded mx-auto">
+
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Decimal</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="decimal-in-4">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Custom</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="any-in">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 mx-auto">
+                        <label for="">Base</label>
+                    </div>
+
+                    <div class="col-9">
+
+                        <input type="text" id="base-in">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-10 text-center shadow p-3  mb-2 bg-white rounded mx-auto">
+                <div class="row">
+                    <div class="col-5 ">
+
+                        <button onclick="dToAny()" class="btn btn-primary">D to C</button>
+                    </div>
+                    <div class="col-2 ">
+
+                        <button onclick="reset4()" style="border-radius:50%;" class="btn btn-warning">R</button>
+                    </div>
+
+                    <div class="col-5">
+
+                        <button onclick="anyToDecimal()" class="btn btn-info">C to D</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script>
+        function bToDecimal() {
+
+            var b = document.getElementById('binary-in').value;
+            d = Number.parseInt(b, 2);
+            document.getElementById('decimal-in').value = d;
+        }
+        function reset() {
+            document.getElementById('decimal-in').value = "";
+            document.getElementById('binary-in').value = "";
+        }
+        function dToBinary() {
+
+            var d = Number(document.getElementById('decimal-in').value);
+            document.getElementById('binary-in').value = d.toString(2);
+
+        }
+
+        function oToDecimal() {
+            var o = document.getElementById('octal-in').value;
+            d = Number.parseInt(o, 8);
+            document.getElementById('decimal-in-2').value = d;
+
+        }
+        function reset2() {
+            document.getElementById('decimal-in-2').value = "";
+            document.getElementById('octal-in').value = "";
+        }
+        function dToOctal() {
+
+            var d = Number(document.getElementById('decimal-in-2').value);
+            document.getElementById('octal-in').value = d.toString(8);
+
+        }
+
+        function hToDecimal() {
+
+            var h = document.getElementById('hexa-in').value;
+            d = Number.parseInt(h, 16);
+            document.getElementById('decimal-in-3').value = d;
+        }
+        function reset3() {
+            document.getElementById('decimal-in-3').value = "";
+            document.getElementById('hexa-in').value = "";
+        }
+        function dToHexa() {
+
+            var d = Number(document.getElementById('decimal-in-3').value);
+            document.getElementById('hexa-in').value = d.toString(16).toUpperCase();
+
+        }
+
+
+
+        function anyToDecimal() {
+
+            var h = document.getElementById('any-in').value;
+            n = Number(document.getElementById('base-in').value);
+            d = Number.parseInt(h, n);
+            document.getElementById('decimal-in-4').value = d;
+        }
+        function reset4() {
+            document.getElementById('decimal-in-4').value = "";
+            document.getElementById('any-in').value = "";
+            document.getElementById('base-in').value = "";
+        }
+        function dToAny() {
+            alert("working");
+
+            var d = Number(document.getElementById('decimal-in-4').value);
+            n = Number(document.getElementById('base-in').value);
+            document.getElementById('any-in').value = d.toString(n).toUpperCase();
+
+        }
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript"></script>
+</body>
+<style>
+
+</style>
+
+</html>
