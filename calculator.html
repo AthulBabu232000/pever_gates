@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>ImprovedCalculator</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row mx-auto">
+        <div class="col-12 col-md-11 mx-auto">
+          <div class="row mx-auto mt-5 pt-5 p-3">
+            <div class="col-md-4 mx-auto p-3" id="cal-in">
+              <div class="row mx-auto">
+                <input
+                  type="text"
+                  class="mx-auto mt-3 mb-3 h-150"
+                  style="width: 85%; height: 5vmax"
+                  id="screen-1"
+                  readonly
+                />
+              </div>
+
+              <!-- display made none and made available for the conversion -->
+              <div class="row mx-auto" style="display: none" id="screen-2">
+                <input
+                  type="text"
+                  class="mx-auto mt-3 mb-3 h-150"
+                  style="width: 85%; height: 5vmax"
+                  readonly
+                />
+              </div>
+
+              <div
+                class="row ml-md-3 mt-3 mx-auto row-inner-1"
+                style="color: white"
+                id="binarykey"
+              ></div>
+
+              <div class="row ml-md-3 mt-3 mx-auto row-inner-1">
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">1</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">2</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">3</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">4</button>
+                </div>
+              </div>
+
+              <div class="row ml-md-3 mt-3 mx-auto row-inner-1">
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">5</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">6</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">7</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">8</button>
+                </div>
+              </div>
+
+              <div class="row ml-md-3 mt-3 mx-auto row-inner-1">
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">9</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">0</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">*</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">/</button>
+                </div>
+              </div>
+
+              <div class="row ml-md-3 mt-3 mx-auto row-inner-1">
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">+</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">-</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonClick(this)">%</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonEval()">=</button>
+                </div>
+              </div>
+
+              <div class="row ml-md-3 mt-3 mx-auto row-inner-1">
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonReset()">R</button>
+                </div>
+                <div class="col-3 mx-auto">
+                  <button class="btn" onclick="buttonDel()">del</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mx-auto">
+              <div class="row mt-5 mx-auto">
+                <button class="btn mx-auto" onclick="binToDec()">
+                  BINtoDEC
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var buttonClick = (val) => {
+        document.getElementsByTagName("input")[0].value += val.innerHTML;
+      };
+
+      var buttonEval = () => {
+        var text = document.getElementsByTagName("input")[0].value;
+        document.getElementsByTagName("input")[0].value = eval(text);
+      };
+
+      var buttonReset = () => {
+        document.getElementsByTagName("input")[0].value = "";
+      };
+
+      var buttonDel = () => {
+        var s = document.getElementsByTagName("input")[0].value;
+        n = s.length;
+        str = s.slice(0, n - 1);
+        document.getElementsByTagName("input")[0].value = str;
+      };
+    
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3 .5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  <style>
+    input {
+      border: 2px solid#262626;
+      font-size: larger;
+    }
+    .container-fluid {
+      background: #262626;
+      height: 100vh;
+    }
+    #cal-in {
+      border-radius: 15px;
+      background: #262626;
+      box-shadow: #262626 0px 0px 2px 2px, #000000 4px 4px 8px,
+        #4d4d4d -4px -4px 8px;
+    }
+    .btn {
+      border-radius: 50px;
+      background: #e31c3a;
+      box-shadow: inset 4px 4px 6px #c11831, inset -4px -4px 6px #ff2043;
+      color: white;
+      font-weight: 700;
+    }
+  </style>
+</html>
